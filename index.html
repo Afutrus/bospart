@@ -65,6 +65,44 @@
             border: 2px solid rgba(255,255,255,0.1);
         }
 
+        .info-price-tag {
+    display: block;
+    padding: 14px;
+    text-align: center;
+    /* Efek Gradasi Metalik */
+    background: linear-gradient(145deg, #2c3e50, #000000);
+    color: #ffcc33; /* Warna emas */
+    font-weight: 800;
+    border-radius: 12px;
+    font-size: 16px;
+    border: 2px solid #ff9800;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(255, 204, 51, 0.5);
+    position: relative;
+    overflow: hidden;
+    cursor: default; /* Menunjukkan tidak bisa diklik */
+    user-select: none;
+}
+
+/* Efek Cahaya Mengalir (Shine Effect) */
+.info-price-tag::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(30deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { left: -60%; }
+    20% { left: 120%; }
+    100% { left: 120%; }
+}
+
         /* Action Buttons */
         .nav-links {
             display: flex;
@@ -351,43 +389,6 @@
     </div>
 
     <script>
-        .info-price-tag {
-    display: block;
-    padding: 14px;
-    text-align: center;
-    /* Efek Gradasi Metalik */
-    background: linear-gradient(145deg, #2c3e50, #000000);
-    color: #ffcc33; /* Warna emas */
-    font-weight: 800;
-    border-radius: 12px;
-    font-size: 16px;
-    border: 2px solid #ff9800;
-    letter-spacing: 1px;
-    text-shadow: 0 0 8px rgba(255, 204, 51, 0.5);
-    position: relative;
-    overflow: hidden;
-    cursor: default; /* Menunjukkan tidak bisa diklik */
-    user-select: none;
-}
-
-/* Efek Cahaya Mengalir (Shine Effect) */
-.info-price-tag::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -60%;
-    width: 20%;
-    height: 200%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: rotate(30deg);
-    animation: shine 3s infinite;
-}
-
-@keyframes shine {
-    0% { left: -60%; }
-    20% { left: 120%; }
-    100% { left: 120%; }
-}
         // Copy Function
         function copyID() {
             const copyText = document.getElementById("idPenerima");
